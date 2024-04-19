@@ -1,0 +1,25 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+ push_to_aliyun:
+    name: Push Docker image to Aliyun Hub
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Check out code
+
+      - uses: mr-smithers-excellent/docker-build-push@v4
+        name: Build & push Docker image
+        with:
+          image: asuntribe/playwright:pytest
+          tag: latest
+          registry: registry.cn-beijing.aliyuncs.com
+          username: ${{ secrets.ALIYUN_USERNAME }}
+          password: ${{ secrets.ALIYUN_PASSWORD }}
