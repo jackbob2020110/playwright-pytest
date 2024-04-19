@@ -18,7 +18,7 @@ jobs:
       - uses: mr-smithers-excellent/docker-build-push@v4
         name: Build & push Docker image
         with:
-          image: asuntribe/playwright:pytest
+          image: asuntribe/playwright-pytest
           tag: latest
           registry: registry.cn-beijing.aliyuncs.com
           username: ${{ secrets.ALIYUN_USERNAME }}
