@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/playwright/python:v1.43.0-jammy
+FROM mcr.microsoft.com/playwright/python:v1.44.0-jammy
 
 USER root
 
