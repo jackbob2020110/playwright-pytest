@@ -12,7 +12,7 @@ RUN sed -i 's|http://archive.ubuntu.com/ubuntu/|http://mirrors.tuna.tsinghua.edu
 
 # Install OpenJDK 11
 RUN apt-get update && \
-    apt-get install -y openjdk-11-jdk && \
+    apt-get install -y unzip openjdk-11-jdk && \
     rm -rf /var/lib/apt/lists/*
 
 
