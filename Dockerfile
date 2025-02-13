@@ -3,8 +3,7 @@ FROM mcr.microsoft.com/playwright:v1.50.1-noble
 USER root
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
-    pip install --no-cache-dir pytest-playwright pytest-html allure-pytest pytest-xdist && \
-    playwright install
+    pip install --no-cache-dir pytest-playwright pytest-html allure-pytest pytest-xdist && playwright install
 
 #Set environment variables for JDK and Allure
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
